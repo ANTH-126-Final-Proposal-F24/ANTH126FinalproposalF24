@@ -1,0 +1,52 @@
+---
+title: "Impact of Early-Life Environmental Stressors on Cortisol Dynamics and Disease Severity in Juvenile Idiopathic Arthritis"
+author: "Kira Johns, Carly Lankarini, & Kyle Rokes"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    theme:
+      bootswatch: lux
+    toc: TRUE
+    toc_float: TRUE
+---
+
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+knitr::include_graphics("testimage1.jpg")
+```
+
+
+## Background
+
+
+
+## **Research Question**
+How do early-life environmental stressors influence baseline and stress-induced cortisol levels in children with juvenile idiopathic arthritis (JIA), and to what extent do these cortisol levels correlate with disease severity indicators such as joint inflammation, inflammatory cytokine levels, and pain scores?
+
+
+
+## Hypothesis
+
+
+
+## Predictions
+
+
+
+## Significance and Prevalence
+
+
+
+## Proposed Methods
+
+
+
+## Proposed Analysis
+
+
+
+## Works Cited
+
+
+
+
+
