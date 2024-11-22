@@ -1,0 +1,72 @@
+body {
+  font-family: 'Monserrat', Sans-Serif;
+  background: #fdfdfd;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #333;
+  text-shadow: 1px 1px #dcdcdc;
+}
+
+code {
+  background-color: #f4f;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+
+.title-slide {
+  position: relative;
+  background-image: url('titlebackground1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.title-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.title-slide h1, .title-slide h2, .title-slide h3, .title-slide p {
+  position: relative; 
+  z-index: 2; 
+}
+
+.title-slide h1 {
+  font-size: 52px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.title-slide h2 {
+  font-size: 48px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.title-slide h3 {
+  font-size: 36px;
+}
+
+.title-slide p {
+  font-size: 24px;
+}
+
+
+
+
+
+
+
