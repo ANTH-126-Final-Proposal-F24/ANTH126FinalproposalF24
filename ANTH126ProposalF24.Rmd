@@ -10,9 +10,9 @@ output:
     toc_float: TRUE
 ---
 
-```{r, message = FALSE, echo = FALSE, warning = FALSE}
+#```{r, message = FALSE, echo = FALSE, warning = FALSE}
 knitr::include_graphics("testimage1.jpg")
-```
+#```
 
 
 ## Background
