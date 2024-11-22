@@ -17,7 +17,7 @@ knitr::include_graphics("testimage1.jpg")
 
 ## Background
 
-yfhjhgjhgh
+
 
 ## **Research Question**
 How do early-life environmental stressors influence baseline and stress-induced cortisol levels in children with juvenile idiopathic arthritis (JIA), and to what extent do these cortisol levels correlate with disease severity indicators such as joint inflammation, inflammatory cytokine levels, and pain scores?
