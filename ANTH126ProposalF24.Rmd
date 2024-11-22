@@ -1,6 +1,6 @@
 ---
 title: "Impact of Early-Life Environmental Stressors on Cortisol Dynamics and Disease Severity in Juvenile Idiopathic Arthritis"
-author: "Kira Johns, Carly Lankarini, & Kyle Rokes"
+author: "Kira Johns, Carly Lankarani, & Kyle Rokes"
 date: "`r Sys.Date()`"
 output: 
   html_document:
