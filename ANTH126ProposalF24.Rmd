@@ -16,6 +16,9 @@ includes:
 
 # Background
 
+#  slides that are entirely text or that use several complete sentences
+Background slides highlighting the significance of the research area and the gap in knowledge
+
 
 ```{r, message = FALSE, echo = FALSE, warning = FALSE}
 knitr::include_graphics("testimage1.jpg")
