@@ -1,24 +1,35 @@
 ---
 title: "Impact of Early-Life Environmental Stressors on Cortisol Dynamics and Disease Severity in JIA"
-subtitle: "Research Proposal"
 author: "Kira Johns, Carly Lankarani, & Kyle Rokes"
-date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    css: ["default", "default-fonts", "luxury.css"]
+    css: [custom.css, tamu, ninjutsu]
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-includes:
-  in_header: "header.html"
+    slide_level: 2
+    includes:
+      in_header: "header.html"
 ---
 
-# Background
+# Background - Significance and Prevalence
 
-#  slides that are entirely text or that use several complete sentences
-Background slides highlighting the significance of the research area and the gap in knowledge
+- affects 1 in 1,000 children, causing long-term disability
 
+--
+
+- high costs due to treatments, hospital visits, and therapies
+
+--
+
+- early-life stress may trigger JIA in genetically predisposed children
+
+--
+
+- early-life stress disrupts cortisol, potentially worsening inflammation and disease
+
+--
 
 ```{r, message = FALSE, echo = FALSE, warning = FALSE}
 knitr::include_graphics("testimage1.jpg")
@@ -26,38 +37,193 @@ knitr::include_graphics("testimage1.jpg")
 
 ---
 
+# What is Currently Known?
+
+- dysregulated cortisol responses are associated with autoimmune diseases
+
+--
+
+- relationship between early-life environmental stressors & long-term immune and endocrine system dysregulation
+
+--
+
+- joint inflammation, cytokine levels, and pain scores are standard indicators used to assess 
+disease severity in JIA
+
+---
+
+# The Current Gap
+
+- pathways linking early-life stress and cortisol
+
+--
+
+- mechanisms connecting cortisol dysregulation to disease severity
+
+--
+
+- the role of cortisol in inflammation and pain
+
+--
+
+- biological mechanisms linking stress and JIA progression
+
+
+---
+
 # Research Question
 
-How do early-life environmental stressors influence baseline and stress-induced cortisol levels in children with juvenile idiopathic arthritis (JIA), and to what extent do these cortisol levels correlate with disease severity indicators such as joint inflammation, inflammatory cytokine levels, and pain scores?
+How do early-life environmental stressors alter the regulation of cortisol in children 
+
+with juvenile idiopathic arthritis (JIA), and what are the **mechanistic pathways** through which 
+
+these cortisol changes influence immune function, inflammation, and disease severity indicators, 
+
+such as joint inflammation, inflammatory cytokine levels, and pain scores?
+
 
 ---
 
 # Hypothesis
 
+- Elevated cortisol levels in children with JIA, measured following specific early-life 
+environmental stress exposures (eg. ACE’s), will be predictive of higher disease severity and 
+more rapid progression of joint inflammation and damage.
+
+--
+
+- Alternatively, children with JIA who display blunted cortisol responses to stress are more 
+likely to experience severe disease, as this may indicate an impaired adaptive stress response 
+mechanism.
+
+--
+
+- Null: No relationship between those with elevated cortisol levels with JIA, following ACE’s → 
+not predictive of disease severity, progression, or damage.
 
 
 ---
 
-# Predictions
+# Prediction 1
 
+Children with JIA who were exposed to early-life stressors will have significantly higher 
 
+baseline cortisol levels and exhibit an exaggerated cortisol response when subjected to mild 
+
+stress (eg. a standardized stress test) compared to children with JIA who did not experience such 
+
+early-life stress.
+
+--
+
+IMAGE of Predicted Graph
 
 ---
 
-# Significance and Prevalence
+# Prediction 2
 
+Baseline and stress-induced cortisol levels in children with JIA will correlate positively with 
 
+markers of disease severity, such as the number of inflamed joints, levels of inflammatory 
+
+cytokines (eg. TNF-alpha, IL-6), and clinical pain scores.
+
+--
+
+IMAGE of Predicted Graph
+
+---
+
+# Prediction 3 (Addressing the Alternative)
+
+Children with blunted cortisol responses may exhibit alternative markers of disease severity, 
+
+such as greater radiographic evidence of joint damage or increased autoantibody titers.
+
+--
+
+IMAGE of Predicted Graph
 
 ---
 
 # Proposed Methods
 
+Sample Size: ~1000 JIA patients (6-16 years) and ~1000 age-matched controls.
 
+Age Range: 6-16 years to capture disease onset and progression.
+
+Sex: Both males and females to assess sex differences in cortisol and disease severity.
+
+Location: Recruited from urban/rural U.S. clinics with varying environmental exposures (e.g., pollution).
+
+
+Inclusion Criteria:
+
+- JIA diagnosis within the past 2 years
+- No other autoimmune or chronic conditions
+- Controls: No autoimmune history
+
+
+Exclusion Criteria:
+
+- On corticosteroids or immunosuppressive drugs
+- Psychiatric conditions or treatments affecting cortisol
+- History of severe, unrelated trauma
+
+---
+
+# Data Collection
+
+Timeline: 2 years, with assessments at baseline, 6, 12, and 18 months.
+
+
+Biological Samples:
+
+- Salivary Cortisol: Collected at morning, midday, and evening visits, plus pre/post-stress test (e.g., Trier Social Stress Test for Children).
+- Blood Samples: Collected at each time point for inflammatory markers (e.g., TNF-alpha, IL-6), drawn within 30 minutes post-stress test.
+
+
+Environmental Stressor Assessment:
+- Parental surveys on early-life stressors (e.g., air pollution, family stress,                    socioeconomic factors).
+- Annual follow-up surveys for environmental changes.
+
+
+Disease Severity Measures:
+
+- Joint Inflammation: Clinical evaluation and imaging (MRI/ultrasound) every 6 months.
+- Pain Scores: Self-reported scales (e.g., Wong-Baker FACES).
+- Functional Status: JIA assessments (e.g., Childhood Health Assessment Questionnaire).
 
 ---
 
 # Proposed Analysis
 
+Variables:
+
+- Independent: Early-life stress (type/intensity), acute stress cortisol response (salivary cortisol pre/post-test).
+- Dependent: Disease severity (joint inflammation, TNF-alpha, IL-6, pain, function).
+- Additional: Baseline cortisol, diurnal variation.
+
+--
+
+Analysis:
+
+Cortisol: Measured via EIA for baseline and stress-induced levels.
+
+Inflammatory Markers: Quantified via ELISA (TNF-alpha, IL-6).
+Statistical Methods:
+
+Group Comparisons: t-tests/ANOVA for baseline comparisons; mixed-effects models for repeated measures.
+
+Correlations: Pearson/Spearman to link cortisol and disease severity.
+
+Regression: Predict stress exposure impact on cortisol and disease.
+
+Path Analysis: SEM to assess pathways linking stress, cortisol, and JIA severity.
+
+--
+
+Justification: Mixed-effects models and SEM handle repeated measures, linking cortisol and immune responses to disease progression.
 
 ---
 

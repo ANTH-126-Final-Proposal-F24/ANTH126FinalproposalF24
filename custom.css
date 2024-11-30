@@ -1,0 +1,24 @@
+.slide:not(.title-slide) {
+  background: linear-gradient(to right, #007bff, #00c8ff);
+}
+
+.title-slide {
+  position: relative;
+  background-image: url(titleslidefixed.jpeg);
+  background-position: 100% 0%; 
+  background-size: cover; 
+  background-color: #fff;
+  padding-left: 100px; 
+  color: white;
+}
+
+.title-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Adjust the opacity for darkness (0.5 is 50%) */
+  z-index: -1; /* Ensure the overlay stays behind the text */
+}
