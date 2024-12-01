@@ -12,7 +12,6 @@ output:
     includes:
       in_header: "header.html"
 ---
-
 # Background - Significance and Prevalence
 
 - affects 1 in 1,000 children, causing long-term disability
@@ -70,7 +69,6 @@ disease severity in JIA
 
 
 ---
-
 # Research Question
 
 How do early-life environmental stressors alter the regulation of cortisol in children 
@@ -81,6 +79,9 @@ these cortisol changes influence immune function, inflammation, and disease seve
 
 such as joint inflammation, inflammatory cytokine levels, and pain scores?
 
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+knitr::include_graphics("testimage1.jpg")
+```
 
 ---
 
