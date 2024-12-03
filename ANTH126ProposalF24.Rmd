@@ -651,7 +651,7 @@ grViz("digraph flowchart {
 
 # Future Implications
 
-- early intervention for better disease outcomes
+- earlier intervention for better disease outcomes
 
 --
 
@@ -659,11 +659,11 @@ grViz("digraph flowchart {
 
 --
 
-- clarifies stress’s role in autoimmune disease development
+- prevention and treatment tailored to genetically predisposed children
 
 --
 
-- improved management through cortisol and immune system insights
+- understanding cortisol dysregulation affects immune markers → more targeted treatments, improving disease management and reducing inflammation-related damage
 
 ```{r, message = FALSE, echo = FALSE, warning = FALSE, out.width = "70%", out.height = "70%", fig.align='center'}
 knitr::include_graphics("childrenhappy.jpg")
