@@ -391,9 +391,9 @@ ggplot(timeline_data, aes(x = Month, y = 1)) +
 
 **Biological Samples**:
 
-- Salivary Cortisol: Collected at morning, midday, and evening visit + pre/post-stress test (Trier Social Stress Test for Children)
+- Salivary Cortisol: Collected at morning, 30 min after, midday, and evening visit (Day 1) + pre/post-stress test (Trier Social Stress Test for Children) (Day 2)
 
-- Blood Samples: Collected at each time point for inflammatory markers (TNF-alpha, IL-6), drawn within 30 minutes post-stress test
+- Blood Samples: Collected at each time point for inflammatory markers (TNF-alpha, IL-6)
 
 ```{r, message = FALSE, echo = FALSE, warning = FALSE, out.width = "90%", out.height = "90%", fig.align='center'}
 knitr::include_graphics("TSST-C.jpg")
@@ -435,15 +435,13 @@ knitr::include_graphics("MRIwongCHAQ.jpg")
 
 **Independent**: 
 - early-life stress (type/intensity)
-- acute stress cortisol response (salivary cortisol pre/post-test)
-- blood cortisol levels (baseline, post-stress, total and free)
+- cortisol response to stress
 
 --
 
 **Dependent**: 
 - disease severity (joint inflammation, TNF-alpha, IL-6, pain, function)
-- salivary cortisol (for comparison of free cortisol)
-- blood cortisol (total and free cortisol, as related to disease severity)
+- progression of joint inflammation and damage
 
 ```{r, message = FALSE, echo = FALSE, warning = FALSE, out.width = "85%", out.height = "85%", fig.align='center'}
 knitr::include_graphics("ACEtojointpain.jpg")
