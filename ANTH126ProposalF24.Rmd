@@ -459,9 +459,9 @@ print(cor_cortisol_inflammation)
 
 ```
 
----
+--- kghggj
 
-# Statistical Method 3
+# Statistical Method 3 
 
 **Regression**: Predict stress exposure impact on cortisol and disease.
 
