@@ -102,48 +102,153 @@ mechanism.
 - Null: No relationship between those with elevated cortisol levels with JIA, following ACE’s → 
 not predictive of disease severity, progression, or damage.
 
-
 ---
 
 # Prediction 1
 
-Children with JIA who were exposed to early-life stressors will have significantly higher 
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+library(ggplot2)
 
-baseline cortisol levels and exhibit an exaggerated cortisol response when subjected to mild 
+# Simulated data for prediction
+data <- data.frame(
+  Group = rep(c("ELS Exposed", "No ELS"), each = 2),
+  Time = rep(c("Baseline", "Post-Stress"), 2),
+  Cortisol = c(15, 30, 10, 16)  # Hypothetical cortisol levels
+)
 
-stress (eg. a standardized stress test) compared to children with JIA who did not experience such 
+# Create the plot and store it in a variable
+plot <- ggplot(data, aes(x = Time, y = Cortisol, group = Group, color = Group)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 3) +
+  labs(
+    title = "Predicted Cortisol Response in Children with JIA",
+    x = "Time",
+    y = "Cortisol Level (μg/dL)",
+    color = "Group"
+  ) +
+  theme_minimal() +
+  theme(
+    text = element_text(size = 14),
+    legend.position = "top"
+  )
 
-early-life stress.
+# Save the plot with a specific size (e.g., 6x4 inches)
+ggsave("prediction1_plot.png", plot = plot, width = 8, height = 5, dpi = 100)
 
---
-
-IMAGE of Predicted Graph
+```
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+knitr::include_graphics("prediction1_plot.png")
+# Children with JIA who were exposed to early-life stressors will have significantly higher baseline cortisol levels and exhibit an exaggerated cortisol response when subjected to mild stress (eg. a standardized stress test) compared to children with JIA who did not experience such early-life stress.
+```
 
 ---
 
 # Prediction 2
 
-Baseline and stress-induced cortisol levels in children with JIA will correlate positively with 
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
 
-markers of disease severity, such as the number of inflamed joints, levels of inflammatory 
+library(ggplot2)
+library(gridExtra)
 
-cytokines (eg. TNF-alpha, IL-6), and clinical pain scores.
 
---
+set.seed(123)  # For reproducibility
+data <- data.frame(
+  Cortisol = seq(10, 30, length.out = 50),  # Cortisol levels
+  Inflamed_Joints = seq(2, 15, length.out = 50) + rnorm(50, 0, 1.5),  # Inflamed joints
+  TNF_alpha = seq(20, 80, length.out = 50) + rnorm(50, 0, 5),          # TNF-alpha levels
+  Pain_Score = seq(3, 10, length.out = 50) + rnorm(50, 0, 1)           # Pain scores
+)
 
-IMAGE of Predicted Graph
+# Create individual scatter plots
+plot1 <- ggplot(data, aes(x = Cortisol, y = Inflamed_Joints)) +
+  geom_point(color = "blue") +
+  geom_smooth(method = "lm", se = FALSE, color = "darkblue") +
+  labs(
+    title = "Cortisol vs. Inflamed Joints",
+    x = "Cortisol Level (μg/dL)",
+    y = "Number of Inflamed Joints"
+  ) +
+  theme_minimal()
+
+plot2 <- ggplot(data, aes(x = Cortisol, y = TNF_alpha)) +
+  geom_point(color = "red") +
+  geom_smooth(method = "lm", se = FALSE, color = "darkred") +
+  labs(
+    title = "Cortisol vs. TNF-alpha",
+    x = "Cortisol Level (μg/dL)",
+    y = "TNF-alpha (pg/mL)"
+  ) +
+  theme_minimal()
+
+plot3 <- ggplot(data, aes(x = Cortisol, y = Pain_Score)) +
+  geom_point(color = "green") +
+  geom_smooth(method = "lm", se = FALSE, color = "darkgreen") +
+  labs(
+    title = "Cortisol vs. Pain Score",
+    x = "Cortisol Level (μg/dL)",
+    y = "Pain Score (0-10)"
+  ) +
+  theme_minimal()
+
+# Arrange the plots into a grid
+grid.arrange(plot1, plot2, plot3, ncol = 2)
+
+ggsave("prediction2_plot.png", plot = plot, width = 8, height = 5, dpi = 100)
+```
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+knitr::include_graphics("prediction2_plot.png")
+# Baseline and stress-induced cortisol levels in children with JIA will correlate positively with markers of disease severity, such as the number of inflamed joints, levels of inflammatory cytokines (eg. TNF-alpha, IL-6), and clinical pain scores.
+```
 
 ---
 
-# Prediction 3 (Addressing the Alternative)
+# Prediction 3
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
 
-Children with blunted cortisol responses may exhibit alternative markers of disease severity, 
+# Load necessary library
+library(ggplot2)
 
-such as greater radiographic evidence of joint damage or increased autoantibody titers.
+# Simulated data for cortisol response and alternative disease markers
+set.seed(124)  # For reproducibility
+data <- data.frame(
+  Cortisol_Response = seq(-5, 10, length.out = 50),  # Blunted to normal responses
+  Joint_Damage = seq(20, 80, length.out = 50) + rnorm(50, 0, 5),  # Joint damage scores
+  Autoantibody_Titers = seq(100, 500, length.out = 50) + rnorm(50, 0, 20)  # Autoantibody titers
+)
 
---
+# Create scatter plots
+plot1 <- ggplot(data, aes(x = Cortisol_Response, y = Joint_Damage)) +
+  geom_point(color = "purple") +
+  geom_smooth(method = "lm", se = FALSE, color = "#6A0DAD") +  # Hex code for dark purple
+  labs(
+    title = "Cortisol Response vs. Joint Damage",
+    x = "Cortisol Response (Δ μg/dL)",
+    y = "Joint Damage Score"
+  ) +
+  theme_minimal()
 
-IMAGE of Predicted Graph
+plot2 <- ggplot(data, aes(x = Cortisol_Response, y = Autoantibody_Titers)) +
+  geom_point(color = "orange") +
+  geom_smooth(method = "lm", se = FALSE, color = "#FF8C00") +  # Hex code for dark orange
+  labs(
+    title = "Cortisol Response vs. Antibody Titers",
+    x = "Cortisol Response (Δ μg/dL)",
+    y = "Autoantibody Titers (AU/mL)"
+  ) +
+  theme_minimal()
+
+
+# Arrange plots in a single row
+library(gridExtra)
+grid.arrange(plot1, plot2, ncol = 2)
+
+ggsave("prediction3_plot.png", plot = plot, width = 9, height = 3, dpi = 300)
+```
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+knitr::include_graphics("prediction3_plot.png")
+
+# Children with blunted cortisol responses may exhibit alternative markers of disease severity, such as greater radiographic evidence of joint damage or increased autoantibody titers.
+```
 
 ---
 
@@ -157,78 +262,266 @@ Sex: Both males and females to assess sex differences in cortisol and disease se
 
 Location: Recruited from urban/rural U.S. clinics with varying environmental exposures (e.g., pollution).
 
+---
 
-Inclusion Criteria:
+# Inclusion Criteria:
 
 - JIA diagnosis within the past 2 years
+
 - No other autoimmune or chronic conditions
+
 - Controls: No autoimmune history
 
+---
 
-Exclusion Criteria:
+# Exclusion Criteria:
 
 - On corticosteroids or immunosuppressive drugs
+
 - Psychiatric conditions or treatments affecting cortisol
+
 - History of severe, unrelated trauma
 
 ---
 
-# Data Collection
+# Data Collection - Timeline
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+library(ggplot2)
 
-Timeline: 2 years, with assessments at baseline, 6, 12, and 18 months.
+# Create a data frame with key time points
+timeline_data <- data.frame(
+  Time = c("Baseline", "6 Months", "12 Months", "18 Months"),
+  Month = c(0, 6, 12, 18),
+  Assessment = c("A-1", "A-2", "A-3", "A-4")
+)
 
+# Plot the timeline
+ggplot(timeline_data, aes(x = Month, y = 1)) +
+  geom_point(size = 4, color = "blue") +   # Points representing assessments
+  geom_text(aes(label = Assessment), vjust = -1, size = 5) +  # Labels for assessments
+  scale_x_continuous(breaks = c(0, 6, 12, 18), labels = timeline_data$Time) +
+  labs(
+    title = "Study Timeline (2 Years)",
+    x = "Time (Months)",
+    y = "",
+    subtitle = "Assessments at Baseline, 6, 12, and 18 Months"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_blank(),  # Hide the y-axis
+    axis.ticks.y = element_blank(),  # Hide y-axis ticks
+    text = element_text(size = 14),
+    plot.title = element_text(size = 16, face = "bold"),
+    plot.subtitle = element_text(size = 12)
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x-axis labels
 
-Biological Samples:
+```
 
-- Salivary Cortisol: Collected at morning, midday, and evening visits, plus pre/post-stress test (e.g., Trier Social Stress Test for Children).
-- Blood Samples: Collected at each time point for inflammatory markers (e.g., TNF-alpha, IL-6), drawn within 30 minutes post-stress test.
+---
 
+# Data Collection 1
 
-Environmental Stressor Assessment:
+**Biological Samples**:
+
+- Salivary Cortisol: Collected at morning, midday, and evening visit + pre/post-stress test (Trier Social Stress Test for Children)
+
+--
+
+- Blood Samples: Collected at each time point for inflammatory markers (TNF-alpha, IL-6), drawn within 30 minutes post-stress test
+
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+knitr::include_graphics("bloodchild.jpg")
+```
+
+---
+
+# Data Collection 2
+
+**Environmental Stressor Assessment**:
+
 - Parental surveys on early-life stressors (e.g., air pollution, family stress,                    socioeconomic factors).
+
+--
+
 - Annual follow-up surveys for environmental changes.
 
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+knitr::include_graphics("parent.jpg")
+```
 
-Disease Severity Measures:
+---
 
-- Joint Inflammation: Clinical evaluation and imaging (MRI/ultrasound) every 6 months.
-- Pain Scores: Self-reported scales (e.g., Wong-Baker FACES).
-- Functional Status: JIA assessments (e.g., Childhood Health Assessment Questionnaire).
+# Data Collection 3
+
+**Disease Severity Measures**:
+
+- Joint Inflammation: Clinical evaluation and imaging (MRI/ultrasound) every 6 months
+
+--
+
+- Pain Scores: Self-reported scales (e.g., Wong-Baker FACES)
+
+--
+
+- Functional Status: JIA assessments (e.g., Childhood Health Assessment Questionnaire)
+`
 
 ---
 
 # Proposed Analysis
 
-Variables:
-
-- Independent: Early-life stress (type/intensity), acute stress cortisol response (salivary cortisol pre/post-test).
-- Dependent: Disease severity (joint inflammation, TNF-alpha, IL-6, pain, function).
-- Additional: Baseline cortisol, diurnal variation.
+- Independent: Early-life stress (type/intensity), acute stress cortisol response (salivary cortisol pre/post-test)
 
 --
 
-Analysis:
-
-Cortisol: Measured via EIA for baseline and stress-induced levels.
-
-Inflammatory Markers: Quantified via ELISA (TNF-alpha, IL-6).
-Statistical Methods:
-
-Group Comparisons: t-tests/ANOVA for baseline comparisons; mixed-effects models for repeated measures.
-
-Correlations: Pearson/Spearman to link cortisol and disease severity.
-
-Regression: Predict stress exposure impact on cortisol and disease.
-
-Path Analysis: SEM to assess pathways linking stress, cortisol, and JIA severity.
+- Dependent: Disease severity (joint inflammation, TNF-alpha, IL-6, pain, function)
 
 --
 
-Justification: Mixed-effects models and SEM handle repeated measures, linking cortisol and immune responses to disease progression.
+- Additional: Baseline cortisol, diurnal variation
+
 
 ---
 
-# Works Cited
+# Statistical Method 1
+
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+# Simulate data for 1000 JIA patients and 1000 age-matched controls
+set.seed(123)
+n <- 2000  # Total number of participants
+
+data <- data.frame(
+  ID = 1:n,
+  Age = sample(6:16, n, replace = TRUE),  # Age range from 6 to 16 years
+  Sex = sample(c("Male", "Female"), n, replace = TRUE),  # Sex of the participants
+  Group = rep(c("JIA", "Control"), each = n/2),  # JIA patients and controls
+  
+  Early_Life_Stress = rnorm(n, mean = 50, sd = 10),  # Early-life stress (survey score)
+  Cortisol_Morning = rnorm(n, mean = 5, sd = 1.5),  # Morning cortisol levels
+  Cortisol_Midday = rnorm(n, mean = 4.5, sd = 1.5),  # Midday cortisol levels
+  Cortisol_Evening = rnorm(n, mean = 3, sd = 1.5),  # Evening cortisol levels
+  Cortisol_PreStress = rnorm(n, mean = 6, sd = 1.5),  # Pre-stress cortisol level
+  Cortisol_PostStress = rnorm(n, mean = 7, sd = 1.5),  # Post-stress cortisol level
+  
+  TNF_alpha = rnorm(n, mean = 20, sd = 5),  # Inflammatory marker TNF-alpha (pg/mL)
+  IL6 = rnorm(n, mean = 15, sd = 4),  # Inflammatory marker IL-6 (pg/mL)
+  
+  Joint_Inflammation = rnorm(n, mean = 10, sd = 3),  # Joint inflammation score
+  Pain_Score = rnorm(n, mean = 5, sd = 2),  # Pain score (Wong-Baker Faces)
+  Function_Score = rnorm(n, mean = 10, sd = 3),  # Functional status (JIA Assessment)
+  
+  Environmental_Stress = rnorm(n, mean = 50, sd = 15),  # Environmental stress (pollution, family stress)
+  Socioeconomic_Status = sample(c("Low", "Medium", "High"), n, replace = TRUE)  # Socioeconomic status
+)
+```
+
+**Group Comparisons**: t-tests/ANOVA for baseline comparisons; mixed-effects models for repeated measures.
+
+--
+
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+# T-test for cortisol levels at different times (morning vs. evening)
+t_test_cortisol <- t.test(Cortisol_Morning ~ Group, data = data)
+print(t_test_cortisol)
+
+# ANOVA for cortisol pre/post-stress test between groups (JIA vs. Controls)
+anova_cortisol <- aov(Cortisol_PostStress ~ Group, data = data)
+summary(anova_cortisol)
+
+# Long-format data for repeated measures
+library(tidyr)
+long_data <- pivot_longer(data, cols = starts_with("Cortisol"),
+                          names_to = "Cortisol_Type", values_to = "Cortisol_Level")
+
+# Mixed-effects model for repeated measures of cortisol
+library(lme4)
+mixed_model <- lmer(Cortisol_Level ~ Cortisol_Type * Group + (1 | ID), data = long_data)
+summary(mixed_model)
+
+```
+
+---
+
+# Statistical Method 2
+
+**Correlations**: Pearson/Spearman to link cortisol and disease severity.
+
+--
+
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+# Pearson correlation between cortisol and disease severity measures (TNF-alpha, joint inflammation)
+cor_cortisol_tnf <- cor.test(data$Cortisol_PostStress, data$TNF_alpha, method = "pearson")
+print(cor_cortisol_tnf)
+
+cor_cortisol_inflammation <- cor.test(data$Cortisol_PostStress, data$Joint_Inflammation, method = "pearson")
+print(cor_cortisol_inflammation)
+
+```
+
+---
+
+# Statistical Method 3
+
+**Regression**: Predict stress exposure impact on cortisol and disease.
+
+--
+
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+# Multiple linear regression for joint inflammation prediction
+regression_model <- lm(Joint_Inflammation ~ Early_Life_Stress + Cortisol_PostStress + TNF_alpha + IL6, data = data)
+summary(regression_model)
+
+```
+
+---
+
+# Statistical Method 4
+
+**Path Analysis**: SEM to assess pathways linking stress, cortisol, and JIA severity.
+
+--
+
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+# Install lavaan for SEM
+if (!requireNamespace("lavaan", quietly = TRUE)) install.packages("lavaan")
+library(lavaan)
+
+# Define SEM model
+sem_model <- '
+  # Direct effects
+  Cortisol_PostStress ~ Early_Life_Stress
+  TNF_alpha ~ Cortisol_PostStress
+  Joint_Inflammation ~ TNF_alpha + Cortisol_PostStress
+  # Indirect effects
+  Joint_Inflammation ~ Early_Life_Stress
+'
+
+# Fit SEM model
+sem_fit <- sem(sem_model, data = data)
+summary(sem_fit, fit.measures = TRUE, standardized = TRUE)
+
+```
+
+---
+
+# Concluding Remarks
+
+**Mixed-effects models and SEM handle repeated measures, linking cortisol and immune responses to disease progression/severity**
+
+---
+
+# Thank you!
+
+### Works Cited
+
+  1. 
+
+  2. 
+
+  3. 
+
+  4. 
 
 
 
