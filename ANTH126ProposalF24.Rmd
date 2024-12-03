@@ -309,7 +309,7 @@ ggsave("prediction3_plot.png", width = 9, height = 3, dpi = 300)
 
 # Proposed Methods
 
-**Sample Size**: ~1000 JIA patients (6-16 years) and ~1000 age-matched controls
+**Sample Size**: >1000 JIA patients & >1000 age-matched controls
 
 **Age Range**: 6-16 years to capture disease onset and progression
 
@@ -437,6 +437,8 @@ knitr::include_graphics("MRIwongCHAQ.jpg")
 - early-life stress (type/intensity)
 - acute stress cortisol response (salivary cortisol pre/post-test)
 - blood cortisol levels (baseline, post-stress, total and free)
+
+--
 
 **Dependent**: 
 - disease severity (joint inflammation, TNF-alpha, IL-6, pain, function)
