@@ -254,9 +254,7 @@ plot3 <- ggplot(data, aes(x = Cortisol, y = Pain_Score)) +
 grid.arrange(plot1, plot2, plot3, ncol = 2)
 
 ggsave("prediction2_plot.png", width = 8, height = 5, dpi = 100)
-```
-```{r, message = FALSE, echo = FALSE, warning = FALSE, fig.align = 'center'}
-knitr::include_graphics("prediction2_plot.png")
+
 # Baseline and stress-induced cortisol levels in children with JIA will correlate positively with markers of disease severity, such as the number of inflamed joints, levels of inflammatory cytokines (eg. TNF-alpha, IL-6), and clinical pain scores.
 ```
 
@@ -303,9 +301,7 @@ library(gridExtra)
 grid.arrange(plot1, plot2, ncol = 2)
 
 ggsave("prediction3_plot.png", width = 9, height = 3, dpi = 300)
-```
-```{r, message = FALSE, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%", fig.align = 'center'}
-knitr::include_graphics("prediction3_plot.png")
+
 # Children with blunted cortisol responses may exhibit alternative markers of disease severity, such as greater radiographic evidence of joint damage or increased autoantibody titers.
 ```
 
